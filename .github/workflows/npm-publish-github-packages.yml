@@ -5,7 +5,7 @@ name: npm-package-test
 
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   build:
