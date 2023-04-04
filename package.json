@@ -1,6 +1,7 @@
 {
   "name": "@tuukezu/npm-package-test",
   "main": "lib/index.js",
+  "version": "0.0.1",
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
@@ -9,8 +10,14 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TuuKeZu/npm-package-test.git"
+  },
   "devDependencies": {
-    "standard-version": "^9.5.0",
     "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "@tuukezu/npm-package-test": "^0.0.1"
   }
 }
