@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import express, { Request, Response } from 'express';
 import Joi from 'joi';
 
 /**
@@ -73,3 +73,16 @@ export function validateBody(req: Request, res: Response, schema: Joi.Schema) {
 
     return result.value;
 }
+
+const app = express();
+
+app.post('/example', async (req, res) => {
+    const schema = Joi.object({
+        token: Joi.string().required().length(24)
+    }).unknown(true); // Make sure to allow other headers
+
+    const { token } = validateHeaders(req, res, schema);
+    if(!token) return;
+
+    /* Do stuff with the field */
+});
