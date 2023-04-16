@@ -1,7 +1,7 @@
 {
   "name": "@tuukezu/joi-express",
   "main": "lib/index.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
