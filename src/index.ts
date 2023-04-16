@@ -64,7 +64,14 @@ export function validateQuery(req: Request, res: Response, schema: Joi.Schema) {
  * @returns `any` or `null` depending weather the request body
  */
 export function validateBody(req: Request, res: Response, schema: Joi.Schema) {
+    console.log(req);
+    if (!req.body) {
+        res.status(500).send({ err: "Request doesn't seem to have a body - are you sure you are using express's body parser?", status: 500 });
+        return null;
+    }
+
     const result = schema.validate(req.body);
+    console.log(result);
 
     if (result.error) {
         res.status(400).send({ err: result.error.details[0].message, status: 400 });
