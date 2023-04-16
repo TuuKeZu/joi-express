@@ -70,7 +70,6 @@ export function validateBody(req: Request, res: Response, schema: Joi.Schema) {
     }
 
     const result = schema.validate(req.body);
-    console.log(result);
 
     if (result.error) {
         res.status(400).send({ err: result.error.details[0].message, status: 400 });
